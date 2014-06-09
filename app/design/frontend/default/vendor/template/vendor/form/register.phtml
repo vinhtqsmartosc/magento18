@@ -1,0 +1,69 @@
+<style type="text/css">
+#frm-vendor {
+    border: 0;
+    margin: 10px;
+    padding: 10px;
+}
+
+#frm-vendor td {
+    padding: 5px;
+}
+
+.err_msg {
+    color: red;
+}
+</style>
+
+<div>
+    <h2>Register New Vendor</h2>
+</div>
+<div>
+    <form action="<?php echo $this->getUrl('*/*/save') ?>" method="post">
+        <fieldset>
+            <table id="frm-vendor">
+                <tr>
+                    <td>Name: </td>
+                    <td><input type="text" id="vendor_name" name="vendor_name" /></td>
+                    <td class="err_msg">*</td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><input type="text" id="vendor_email" name="vendor_email" /></td>
+                    <td class="err_msg">*</td>
+                </tr>
+                <tr>
+                    <td>Contact: </td>
+                    <td><input type="text" id="vendor_contact" name="vendor_contact" /></td>
+                    <td class="err_msg">*</td>
+                </tr>
+                <tr>
+                    <td>Description: </td>
+                    <td><textarea id="vendor_description" name="vendor_description" rows="3" cols="20"></textarea></td>
+                    <td class="err_msg">*</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2" class="err_msg">
+                        * Require fields
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <input id="btnReset" type="reset" value="Reset" />
+                        <input id="btnSave" type="submit" value="Save" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</div>
+
+<script type="text/javascript">
+    document.getElementById('btnSave').click(function(){
+//        name = document.getElementById('vendor_name').getText();
+//        if(name == "") {
+//        }
+        alert('No');
+    });
+</script>
