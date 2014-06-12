@@ -1,0 +1,56 @@
+<style>
+#frm_register table
+{
+    border: 0;
+}
+
+#frm_register table td
+{
+    margin: 10px;
+    padding: 10px;
+}
+</style>
+
+<h2>Register Vendor</h2>
+
+<form id="frm_register" action="<?php echo $this->getUrl('*/*/save') ?>" method="post">
+    <fieldset>
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input class="required-entry" type="text" id="vendor_name" name="vendor_name" /></td>
+                <td class="error">*</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input class="required-entry validate-email" type="text" id="vendor_email" name="vendor_email" /></td>
+                <td class="error">*</td>
+            </tr>
+            <tr>
+                <td>Contact:</td>
+                <td><input class="required-entry" type="text" id="vendor_contact" name="vendor_contact" /></td>
+                <td class="error">*</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><textarea class="required-entry" rows="5" cols="30" type="text" id="vendor_description" name="vendor_description"></textarea></td>
+                <td class="error">*</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2" class="error">* Require fields</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <input type="submit" value="Save" />
+                    <input type="reset" value="Reset" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+
+<script type="text/javascript">
+    var customform = new VarienForm('frm_register', true);
+</script>

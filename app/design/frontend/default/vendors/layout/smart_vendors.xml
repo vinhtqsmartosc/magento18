@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+    <default>
+        <reference name="top.links">
+            <action method="addLink" translate="label title" module="smart_vendors"><label>Register Vendor</label><url helper="smart_vendors/registerVendorsUrl"/><title>Register Vendor</title><prepare/><urlParams/><position>1</position></action>
+            <action method="addLink" translate="label title" module="smart_vendors"><label>Vendors List</label><url helper="smart_vendors/listVendorsUrl"/><title>Vendors List</title><prepare/><urlParams/><position>2</position></action>
+        </reference>
+    </default>
+
+    <smart_vendors_index_index>
+        <reference name="content">
+            <block name="vendors.list" type="smart_vendors/vendors_list" template="vendor/list.phtml"/>
+        </reference>
+    </smart_vendors_index_index>
+
+    <smart_vendors_index_register>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block name="vendors.register" type="smart_vendors/vendors_list" template="vendor/form/register.phtml"/>
+        </reference>
+    </smart_vendors_index_register>
+
+    <smart_vendors_index_view>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+            <block name="vendors.detail" type="smart_vendors/vendors_view" template="vendor/view.phtml" />
+        </reference>
+    </smart_vendors_index_view>
+
+</layout>

@@ -1,0 +1,11 @@
+<?php $vendorCollection = $this->getAllVendor() ?>
+<h1>List of Vendor</h1>
+<ul>
+<?php foreach ($vendorCollection as $vendor) : ?>
+    <li>
+        <a href="<?php echo $this->getUrl('*/*/view',array('id' => $vendor->getVendorId()));?>">
+            <?php echo $vendor->getVendorName(); ?>
+        </a>
+    </li>
+<?php endforeach; ?>
+</ul>

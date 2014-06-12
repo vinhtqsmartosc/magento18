@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smart_Vendors>
+            <version>0.1.2</version>
+        </Smart_Vendors>
+    </modules>
+
+    <frontend>
+        <routers>
+            <smart_vendors>
+                <use>standard</use>
+                <args>
+                    <module>Smart_Vendors</module>
+                    <frontName>vendors</frontName>
+                </args>
+            </smart_vendors>_vendors>
+        </routers>
+        <layout>
+            <updates>
+                <smart_vendors>
+                    <file>smart_vendors.xml</file>
+                </smart_vendors>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <models>
+            <smart_vendors>
+                <class>Smart_Vendors_Model</class>
+                <resourceModel>smart_vendors_resource</resourceModel>
+            </smart_vendors>
+            <smart_vendors_resource>
+                <class>Smart_Vendors_Model_Resource</class>
+                <entities>
+                    <vendors>
+                        <table>sm_vendors</table>
+                    </vendors>
+                </entities>
+            </smart_vendors_resource>
+        </models>
+
+        <blocks>
+            <smart_vendors>
+                <class>Smart_Vendors_Block</class>
+            </smart_vendors>
+        </blocks>
+        <helpers>
+            <smart_vendors>
+                <class>Smart_Vendors_Helper</class>
+            </smart_vendors>
+        </helpers>
+        <resources>
+            <smart_vendors_setup>
+                <setup>
+                    <module>Smart_Vendors</module>
+                </setup>
+            </smart_vendors_setup>
+        </resources>
+    </global>
+</config>
