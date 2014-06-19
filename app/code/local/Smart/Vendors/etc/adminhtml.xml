@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <smart_vendors_vendor>
+                    <title>Manage Vendors</title>
+                    <action>adminhtml/vendors</action>
+                </smart_vendors_vendor>
+            </children>
+        </catalog>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <smart_vendors_vendor>
+                            <title>Manage Vendors</title>
+                        </smart_vendors_vendor>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

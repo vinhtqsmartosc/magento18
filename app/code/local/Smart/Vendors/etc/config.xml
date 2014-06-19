@@ -14,7 +14,7 @@
                     <module>Smart_Vendors</module>
                     <frontName>vendors</frontName>
                 </args>
-            </smart_vendors>_vendors>
+            </smart_vendors>
         </routers>
         <layout>
             <updates>
@@ -59,4 +59,26 @@
             </smart_vendors_setup>
         </resources>
     </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Smart_Vendors before="Mage_Adminhtml">Smart_Vendors_Adminhtml</Smart_Vendors>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <smart_vendors>
+                    <file>admin_vendors.xml</file>
+                </smart_vendors>
+            </updates>
+        </layout>
+    </adminhtml>
 </config>
