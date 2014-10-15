@@ -58,20 +58,40 @@ class Smart_Vendors_Adminhtml_VendorsController extends Mage_Adminhtml_Controlle
         }
 
         Mage::register('smart_vendors', $model);
-
+        $this->getLayout()->getBlock('head')->setCanLoadExtJs(true);
         $this->_initAction()
             ->_addBreadcrumb($id ? $this->__('Edit Vendor') : $this->__('New Vendor'), $id ? $this->__('Edit Vendor') : $this->__('New Vendor'))
             ->_addContent($this->getLayout()->createBlock('smart_vendors/adminhtml_vendor_edit')->setData('action', $this->getUrl('*/*/save')))
+            ->_addLeft($this->getLayout()->createBlock('smart_vendors/adminhtml_vendor_edit_tabs'))
             ->renderLayout();
     }
 
     public function saveAction()
     {
         if ($postData = $this->getRequest()->getPost()) {
-            $model = Mage::getSingleton('smart_vendors/vendors');
-            $model->setData($postData);
 
+            $vendor_id = (int) $postData['vendor_id'];
+            $links = $this->getRequest()->getPost('links');
+            $vasso_param = Mage::helper('adminhtml/js')->decodeGridSerializedInput($links['pvendors']);
+            $productCollection = Mage::getModel('catalog/product')->getCollection()
+                ->addAttributeToSelect('*')
+                ->addAttributeToFilter('vendor',$vendor_id)->load();
+
+            $model = Mage::getSingleton('smart_vendors/vendors');
             try {
+
+                foreach ($productCollection as $product) {
+                    $product->setData('vendor', null);
+                    $product->save();
+                }
+
+                foreach ($vasso_param as $key => $param) {
+                    $product = Mage::getModel('catalog/product')->load($key);
+                    $product->setData('vendor', $vendor_id);
+                    $product->save();
+                }
+
+                $model->setData($postData);
                 $model->save();
 
                 Mage::getSingleton('adminhtml/session')->addSuccess($this->__('The vendor has been saved.'));
@@ -95,6 +115,26 @@ class Smart_Vendors_Adminhtml_VendorsController extends Mage_Adminhtml_Controlle
     {
         $data = Mage::getModel('smart_vendors/vendors')->load($this->getRequest()->getParam('id'));
         echo $data->getContent();
+    }
+
+    public function selectAction()
+    {
+        $param = $this->getRequest()->getParam('vendor_id');
+        Mage::register('vasso_id', $param);
+        $this->loadLayout();
+        $this->getLayout()->getBlock('adminhtml.vendor.edit.tab.vasso.pselect')
+            ->setProductsVendor($this->getRequest()->getPost('products_vendor', null));;
+        $this->renderLayout();
+    }
+
+    public function selectGridOnlyAction()
+    {
+        $param = $this->getRequest()->getParam('vendor_id');
+        Mage::register('vasso_id', $param);
+        $this->loadLayout();
+        $this->getLayout()->getBlock('adminhtml.vendor.edit.tab.vasso.pselect')
+            ->setProductsVendor($this->getRequest()->getPost('products_vendor', null));;
+        $this->renderLayout();
     }
 
     protected function _isAllowed()

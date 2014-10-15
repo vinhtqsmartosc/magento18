@@ -52,6 +52,29 @@ class Smart_Vendors_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Wid
             )
         );
 
+        $this->addColumn('action',
+            array(
+                'header' => $this->__('Action'),
+                'width'     => '50px',
+                'type'      => 'action',
+                'getter'     => 'getId',
+                'actions'   => array(
+                    array(
+                        'caption' => Mage::helper('catalog')->__('Edit'),
+                        'url'     => array(
+                            'base'=>'*/*/edit',
+                            'params'=>array('store'=>$this->getRequest()->getParam('store'))
+                        ),
+                        'field'   => 'id'
+                    )
+                ),
+                'filter'    => false,
+                'sortable'  => false,
+                'index'     => 'stores',
+            )
+        );
+
+
         return parent::_prepareColumns();
 
     }

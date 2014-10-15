@@ -14,6 +14,15 @@ class Smart_Vendors_Block_Adminhtml_Vendor_Edit extends Mage_Adminhtml_Block_Wid
         $this->_updateButton('delete', 'label', $this->__('Delete Vendor'));
     }
 
+    protected function _prepareLayout()
+    {
+        parent::_prepareLayout();
+        if (Mage::getSingleton('cms/wysiwyg_config')->isEnabled()) {
+            $this->getLayout()->getBlock('head')->setCanLoadTinyMce(true);
+            $this->getLayout()->getBlock('head')->setCanLoadExtJs(true);
+        }
+    }
+
     public function getHeaderText()
     {
         if(Mage::registry('smart_vendors')->getId())

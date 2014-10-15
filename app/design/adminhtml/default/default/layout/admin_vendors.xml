@@ -4,5 +4,72 @@
         <reference name="content">
             <block type="smart_vendors/adminhtml_vendor" name="vendor.admin"/>
         </reference>
+        <reference name="head">
+            <action method="setCanLoadExtJs">
+                <flag>1</flag>
+            </action>
+            <action method="addJs">
+                <script>mage/adminhtml/variables.js</script>
+            </action>
+            <action method="addJs">
+                <script>mage/adminhtml/wysiwyg/widget.js</script>
+            </action>
+            <action method="addJs">
+                <script>lib/flex.js</script>
+            </action>
+            <action method="addJs">
+                <script>lib/FABridge.js</script>
+            </action>
+            <action method="addJs">
+                <script>mage/adminhtml/flexuploader.js</script>
+            </action>
+            <action method="addJs">
+                <script>mage/adminhtml/browser.js</script>
+            </action>
+            <action method="addJs">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/magento.css</name>
+            </action>
+            <action method="addCss">
+                <stylesheet>lib/prototype/windows/themes/magento.css</stylesheet>
+            </action>
+        </reference>
     </adminhtml_vendors_index>
+
+    <adminhtml_vendors_select>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="smart_vendors/adminhtml_vendor_edit_tab_vasso_pselect"
+                   name="adminhtml.vendor.edit.tab.vasso.pselect"/>
+            <block type="adminhtml/widget_grid_serializer" name="pselect_grid_serializer">
+                <reference name="pselect_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>adminhtml.vendor.edit.tab.vasso.pselect</grid_block_name>
+                        <data_callback>getSelectedVendorProducts</data_callback>
+                        <hidden_input_name>links[pvendors]</hidden_input_name>
+                        <reload_param_name>products_vendor</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>id</input_name>
+                        <input_name>qty</input_name>
+                        <input_name>position</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </adminhtml_vendors_select>
+
+    <adminhtml_vendors_selectgridonly>
+        <block type="core/text_list" name="root">
+            <block type="smart_vendors/adminhtml_vendor_edit_tab_vasso_pselect"
+                   name="adminhtml.vendor.edit.tab.vasso.pselect"/>
+        </block>
+    </adminhtml_vendors_selectgridonly>
+
 </layout>
