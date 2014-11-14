@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Self_Zoom>
+            <version>0.1.0</version>
+        </Self_Zoom>
+    </modules>
+    <global>
+        <models>
+            <self_zoom>
+                <class>Self_Zoom_Model</class>
+            </self_zoom>
+        </models>
+        <blocks>
+            <self_zoom>
+                <class>Self_Zoom_Block</class>
+            </self_zoom>
+        </blocks>
+        <helpers>
+            <self_zoom>
+                <class>Self_Zoom_Helper</class>
+            </self_zoom>
+        </helpers>
+        <resources>
+            <self_zoom_setup>
+                <setup>
+                    <module>Self_Zoom</module>
+                </setup>
+            </self_zoom_setup>
+        </resources>
+    </global>
+</config>

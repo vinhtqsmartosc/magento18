@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Self_Bestseller>
+            <version>0.1.0</version>
+        </Self_Bestseller>
+    </modules>
+    <global>
+        <models>
+            <self_bestseller>
+                <class>Self_Bestseller_Model</class>
+            </self_bestseller>
+        </models>
+        <blocks>
+            <self_bestseller>
+                <class>Self_Bestseller_Block</class>
+            </self_bestseller>
+        </blocks>
+        <helpers>
+            <self_bestseller>
+                <class>Self_Bestseller_Helper</class>
+            </self_bestseller>
+        </helpers>
+        <resources>
+            <self_bestseller_setup>
+                <setup>
+                    <module>Self_Bestseller</module>
+                </setup>
+            </self_bestseller_setup>
+        </resources>
+    </global>
+</config>

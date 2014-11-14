@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Self_Slider>
+            <version>0.1.0</version>
+        </Self_Slider>
+    </modules>
+    <global>
+        <models>
+            <self_slider>
+                <class>Self_Slider_Model</class>
+            </self_slider>
+        </models>
+        <blocks>
+            <self_slider>
+                <class>Self_Slider_Block</class>
+            </self_slider>
+        </blocks>
+        <helpers>
+            <self_slider>
+                <class>Self_Slider_Helper</class>
+            </self_slider>
+        </helpers>
+        <resources>
+            <self_slider_setup>
+                <setup>
+                    <module>Self_Slider</module>
+                </setup>
+            </self_slider_setup>
+        </resources>
+    </global>
+</config>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Self_Featured>
+            <version>0.1.0</version>
+        </Self_Featured>
+    </modules>
+    <global>
+        <models>
+            <self_featured>
+                <class>Self_Featured_Model</class>
+            </self_featured>
+        </models>
+        <blocks>
+            <self_featured>
+                <class>Self_Featured_Block</class>
+            </self_featured>
+        </blocks>
+        <helpers>
+            <self_featured>
+                <class>Self_Featured_Helper</class>
+            </self_featured>
+        </helpers>
+        <resources>
+            <self_featured_setup>
+                <setup>
+                    <module>Self_Featured</module>
+                </setup>
+            </self_featured_setup>
+        </resources>
+    </global>
+</config>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Self_Filter>
+            <version>0.1.0</version>
+        </Self_Filter>
+    </modules>
+    <global>
+        <models>
+            <self_filter>
+                <class>Self_Filter_Model</class>
+            </self_filter>
+        </models>
+        <blocks>
+            <self_filter>
+                <class>Self_Filter_Block</class>
+            </self_filter>
+        </blocks>
+        <helpers>
+            <self_filter>
+                <class>Self_Filter_Helper</class>
+            </self_filter>
+        </helpers>
+        <resources>
+            <self_filter_setup>
+                <setup>
+                    <module>Self_Filter</module>
+                </setup>
+            </self_filter_setup>
+        </resources>
+    </global>
+</config>

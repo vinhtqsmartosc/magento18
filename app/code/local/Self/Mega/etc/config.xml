@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Self_Mega>
+            <version>0.1.0</version>
+        </Self_Mega>
+    </modules>
+    <global>
+        <models>
+            <self_mega>
+                <class>Self_Mega_Model</class>
+            </self_mega>
+        </models>
+        <blocks>
+            <self_mega>
+                <class>Self_Mega_Block</class>
+            </self_mega>
+        </blocks>
+        <helpers>
+            <self_mega>
+                <class>Self_Mega_Helper</class>
+            </self_mega>
+        </helpers>
+        <resources>
+            <self_mega_setup>
+                <setup>
+                    <module>Self_Mega</module>
+                </setup>
+            </self_mega_setup>
+        </resources>
+    </global>
+</config>

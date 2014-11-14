@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Self_Zoom>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Self_Zoom>
+    </modules>
+</config>
