@@ -79,6 +79,18 @@ class Smart_Vendors_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Wid
 
     }
 
+    protected function _prepareMassaction()
+    {
+        $this->setMassactionIdField('vendor_id');
+        $this->getMassactionBlock()->setFormFieldName('vendor');
+
+        $this->getMassactionBlock()->addItem('delete', array(
+            'label'=> $this->__('Delete'),
+            'url'  => $this->getUrl('*/*/multiDelete'),
+            'confirm' => $this->__('Are you sure?')
+        ));
+    }
+
     public function getRowUrl($row)
     {
         // This is where our row data will link to
