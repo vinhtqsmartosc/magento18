@@ -1,11 +1,6 @@
-/var/cache/mage--0/*
 /var
-/var/cache/mage--c/mage---933_Zend_LocaleC_he_IL_language_he
-/var/cache/mage--c/mage---933_Zend_LocaleC_hi_IN_country_IN
-/var/cache/mage--c/mage---933_Zend_LocaleC_hr_HR_country_HR
-/var/cache/mage--c/mage---933_Zend_LocaleC_hu_HU_country_HU
-/var/cache/mage--c/mage---933_Zend_LocaleC_id_ID_country_ID
-/var/cache/mage--c/mage---933_Zend_LocaleC_id_ID_language_id
-/var/cache/mage--c/mage---933_Zend_LocaleC_is_IS_country_IS
-var
+
 .idea
+
+/.idea/*.name
+var
